@@ -19,9 +19,9 @@ int nombreValido(char nombre[]) {
 int main() {
     char nombres[NUM_EQUIPOS][MAX_NOMBRE];
     int puntos[NUM_EQUIPOS] = {0};
-    int gf[NUM_EQUIPOS] = {0}; // goles a favor
-    int gc[NUM_EQUIPOS] = {0}; // goles en contra
-    int diff[NUM_EQUIPOS];     // diferencia de goles
+    int gf[NUM_EQUIPOS] = {0}; 
+    int gc[NUM_EQUIPOS] = {0}; 
+    int diff[NUM_EQUIPOS];     
     int marcador1, marcador2;
     int i, j;
 
@@ -64,12 +64,12 @@ int main() {
         }
     }
 
-    // Calcular diferencia de goles
+    
     for (i = 0; i < NUM_EQUIPOS; i++) {
         diff[i] = gf[i] - gc[i];
     }
 
-    // Ordenar por puntos y diferencia de goles
+    
     for (i = 0; i < NUM_EQUIPOS - 1; i++) {
         for (j = 0; j < NUM_EQUIPOS - 1 - i; j++) {
             int swap = 0;
@@ -103,7 +103,7 @@ int main() {
         }
     }
 
-    // Mostrar tabla de posiciones
+    
     printf("\n--- Tabla de Posiciones ---\n");
     printf("Pos  Equipo               GF  GC  DIF  Pts\n");
     for (i = 0; i < NUM_EQUIPOS; i++) {
@@ -111,7 +111,7 @@ int main() {
                i+1, nombres[i], gf[i], gc[i], diff[i], puntos[i]);
     }
 
-    // Finalistas
+    
     printf("\n--- Finalistas ---\n");
     printf("1. %s\n", nombres[0]);
     printf("2. %s\n", nombres[1]);
